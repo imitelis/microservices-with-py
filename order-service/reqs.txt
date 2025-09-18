@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+aiokafka
+pydantic
+databases
+sqlite-utils
+pytest
+httpx
