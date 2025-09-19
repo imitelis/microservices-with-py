@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from app.adapters.kafka_producer import KafkaOrderProducer
 from app.adapters.sqlite_repo import SQLiteOrderRepository
-from app.use_cases.create_order import CreateOrderUseCase
+from app.logic.create_order import CreateOrderUseCase
 from app.api.routes import get_order_router
 
 app = FastAPI()
