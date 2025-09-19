@@ -1,11 +1,9 @@
-# app/use_cases/create_order.py
-
 from app.domain.models import Order
 from app.ports.order_repo import OrderRepositoryPort
-from app.adapters.kafka_producer import KafkaOrderProducer
+from app.ports.order_publisher import OrderPublisherPort
 
 class CreateOrderUseCase:
-    def __init__(self, repo: OrderRepositoryPort, producer: KafkaOrderProducer):
+    def __init__(self, repo: OrderRepositoryPort, producer: OrderPublisherPort):
         self.repo = repo
         self.producer = producer
 
