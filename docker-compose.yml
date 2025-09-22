@@ -17,7 +17,7 @@ services:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
   kafka-setup:
@@ -31,11 +31,11 @@ services:
       kafka-topics --create --topic inventory.reserved --bootstrap-server kafka:9092 --replication-factor 1 --partitions 1;
       "
 
-  order-service:
+  orders-service:
     build:
-      context: ./order-service
+      context: ./orders-service
     depends_on:
-      - kafka
+      - kafka-setup
     ports:
       - "7001:8080"
     environment:

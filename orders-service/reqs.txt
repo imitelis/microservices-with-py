@@ -1,6 +1,7 @@
 fastapi
 uvicorn
 aiokafka
+aiosqlite
 pydantic
 databases
 sqlite-utils
