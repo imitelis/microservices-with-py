@@ -1,6 +1,6 @@
 import pytest
 from app.domain.models import Order
-from app.use_cases.create_order import CreateOrderUseCase
+from app.application.create_order import CreateOrderUseCase
 
 class DummyRepo:
     async def save_order(self, order):

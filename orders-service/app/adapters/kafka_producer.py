@@ -25,8 +25,8 @@ class KafkaOrderProducer:
         raise RuntimeError("error: Could not connect to Kafka after retries")
 
     async def stop(self):
-        await self.producer.stop()
+        await self._producer.stop()
 
     async def send_order(self, order: Order):
         value = json.dumps(order.dict()).encode("utf-8")
-        await self.producer.send_and_wait(TOPIC_ORDERS, value)
+        await self._producer.send_and_wait(TOPIC_ORDERS, value)

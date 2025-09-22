@@ -11,9 +11,12 @@ Microservices backend example using FastAPI and Kafka
   *  same folder other terminal `docker-compose up`
   *  `uvicorn app.main:app --reload`
 
-## micro-services (several servers kafka topics)
+## microservices (several servers kafka topics)
   *  first-service-kafka-1
-  *  first-service-zookeeper-1  
+  *  first-service-zookeeper-1
+
+### Test microservice individually
+  *  `PYTHONPATH=$(pwd) pytest`
 
 ### Microservices architecture
 graph TD
