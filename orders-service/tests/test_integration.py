@@ -11,7 +11,7 @@ def app_with_mocked_kafka():
         mock_instance.stop = AsyncMock()
         mock_instance.send_order = AsyncMock()
 
-        from app.main import create_app  # ← imported *after* patch
+        from app.main import create_app
         app = create_app()
         return app
 

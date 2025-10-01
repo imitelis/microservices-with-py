@@ -1,9 +1,9 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
-from app.adapters.kafka_producer import KafkaOrderProducer
-from app.adapters.sqlite_repo import SQLiteOrderRepository
-from app.application.create_order import CreateOrderUseCase
-from app.api.routes import get_order_router
+from app.adapters.outbound.kafka_producer import KafkaOrderProducer
+from app.adapters.outbound.sqlite_repo import SQLiteOrderRepository
+from app.application.order_service import OrderService
+from app.adapters.inbound.api.routes import get_order_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -17,8 +17,8 @@ async def lifespan(app: FastAPI):
     app.state.producer = producer
 
     # Create the use case and router here, after producer & repo are ready
-    use_case = CreateOrderUseCase(repo, producer)
-    app.include_router(get_order_router(use_case))
+    order_uc = OrderService(repo, producer)
+    app.include_router(get_order_router(order_uc))
 
     yield
 
