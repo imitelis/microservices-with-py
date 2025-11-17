@@ -1,6 +1,6 @@
-# app/ports/order_publisher.py
+# src/ports/order_publisher.py
 from abc import ABC, abstractmethod
-from app.domain.models import Order
+from src.domain.models.order import Order
 
 class OrderPublisherPort(ABC):
     @abstractmethod

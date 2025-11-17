@@ -1,8 +1,8 @@
 import pytest
 import asyncio
 import aiosqlite
-from app.adapters.outbound.sqlite_repo import SQLiteOrderRepository
-from app.domain.models import Order
+from src.infrastructure.outbound.db.sqlite_repo import SQLiteOrderRepository
+from src.domain.models.order import Order
 
 @pytest.mark.asyncio
 async def test_init_creates_table(tmp_path):

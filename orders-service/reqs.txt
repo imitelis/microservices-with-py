@@ -7,3 +7,10 @@ databases
 sqlite-utils
 pytest
 httpx
+asyncapi
+requests
+pyyaml
+typer
+jinja2
+apidaora
+markdown

@@ -1,4 +1,4 @@
-# app/domain/models.py
+# app/domain/order.py
 
 from pydantic import BaseModel
 

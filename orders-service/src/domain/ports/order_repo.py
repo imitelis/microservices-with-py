@@ -1,8 +1,8 @@
-# app/ports/order_repo.py
+# src/ports/order_repo.py
 
 from typing import List, Optional
 from abc import ABC, abstractmethod
-from app.domain.models import Order
+from src.domain.models.order import Order
 
 class OrderRepositoryPort(ABC):
     @abstractmethod

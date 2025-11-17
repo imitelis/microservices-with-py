@@ -1,10 +1,10 @@
-# app/adapters/sqlite_repo.py
+# src/infrastructure/outbound/db/sqlite_repo.py
 
 import aiosqlite
 from typing import List, Optional
-from app.domain.models import Order
-from app.ports.order_repo import OrderRepositoryPort
-from app.config import SQLITE_DB_FILE
+from src.domain.models.order import Order
+from src.domain.ports.order_repo import OrderRepositoryPort
+from src.core.config import SQLITE_DB_FILE
 
 class SQLiteOrderRepository(OrderRepositoryPort):
     def __init__(self):

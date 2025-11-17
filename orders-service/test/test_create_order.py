@@ -1,6 +1,6 @@
 import pytest
-from app.domain.models import Order
-from app.application.order_service import OrderService
+from src.domain.models.order import Order
+from src.application.services.orders_service import OrderService
 
 class DummyRepo:
     async def save_order(self, order):

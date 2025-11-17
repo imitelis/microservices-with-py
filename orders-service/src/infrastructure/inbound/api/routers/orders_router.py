@@ -1,12 +1,12 @@
-# app/api/routes.py
+# src/infrastructure/inbound/api/routers/orders_router.py
 
 from typing import List
 from fastapi import APIRouter, HTTPException
-from app.domain.models import Order
-from app.application.order_service import OrderService
+from src.domain.models.order import Order
+from src.application.services.orders_service import OrdersService
 
-def get_order_router(
-    order_service: OrderService
+def get_orders_router(
+    order_service: OrdersService
 ):
     router = APIRouter()
 

@@ -1,9 +1,9 @@
 from typing import List, Optional
-from app.domain.models import Order
-from app.ports.order_repo import OrderRepositoryPort
-from app.ports.order_publisher import OrderPublisherPort
+from src.domain.models.order import Order
+from src.domain.ports.order_repo import OrderRepositoryPort
+from src.domain.ports.order_publisher import OrderPublisherPort
 
-class OrderService:
+class OrdersService:
     def __init__(self, repo: OrderRepositoryPort, producer: OrderPublisherPort):
         self.repo = repo
         self.producer = producer

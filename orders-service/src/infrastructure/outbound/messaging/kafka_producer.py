@@ -1,11 +1,11 @@
-# app/adapters/kafka_producer.py
+# src/infrastructure/outbound/messaging/kafka_producer.py
 
 import asyncio
 from aiokafka import AIOKafkaProducer
 from aiokafka.errors import KafkaConnectionError
 import json
-from app.config import KAFKA_BOOTSTRAP_SERVERS, TOPIC_ORDERS
-from app.domain.models import Order
+from src.core.config import KAFKA_BOOTSTRAP_SERVERS, TOPIC_ORDERS
+from src.domain.models.order import Order
 
 class KafkaOrderProducer:
     def __init__(self):
