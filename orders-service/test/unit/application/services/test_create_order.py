@@ -1,6 +1,6 @@
 import pytest
 from src.domain.models.order import Order
-from src.application.services.orders_service import OrderService
+from src.application.services.orders_service import OrdersService
 
 class DummyRepo:
     async def save_order(self, order):
@@ -13,7 +13,7 @@ class DummyProducer:
 
 @pytest.mark.asyncio
 async def test_create_order():
-    use_case = OrderService(DummyRepo(), DummyProducer())
+    use_case = OrdersService(DummyRepo(), DummyProducer())
     order = Order(item="Keyboard", quantity=2)
     saved = await use_case.create(order)
     assert saved.id == 1
